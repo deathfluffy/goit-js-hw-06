@@ -1,14 +1,12 @@
 const input = document.getElementById("name-input");
+const nameOutput = document.getElementById("name-output");
 
-input.addEventListener("blur", () => {
-  const expectedLength = parseInt(input.getAttribute("data-length"));
-  const inputValue = input.value.trim().length;
+input.addEventListener("input", (event) => {
+  const inputValue = input.value.trim();
 
-  if (inputValue === expectedLength) {
-    input.classList.remove("invalid");
-    input.classList.add("valid");
+  if (inputValue === "") {
+    nameOutput.textContent = "Anonymous";
   } else {
-    input.classList.remove("valid");
-    input.classList.add("invalid");
+    nameOutput.textContent = inputValue;
   }
 });
