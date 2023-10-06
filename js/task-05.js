@@ -1,7 +1,7 @@
 const input = document.getElementById("name-input");
 const nameOutput = document.getElementById("name-output");
 
-input.addEventListener("input", (event) => {
+input.addEventListener("input", () => {
   const inputValue = input.value.trim();
 
   if (inputValue === "") {
